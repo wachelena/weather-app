@@ -1,0 +1,15 @@
+
+  <div class="weather-header">
+    THE WEATHER APP
+  </div>
+
+  <div class="current-weather">
+    <p> Current data for {{currentWeather.location.name}}: </p>
+    <ul>
+      <li>Temperature: {{currentWeather.current.temp_c}} °C</li>
+      <li>Wind speed: {{currentWeather.current.wind_kph}} km/h</li>
+      <li>Condition: {{currentWeather.current.condition.text}}</li>
+    </ul>
+    <img src={{currentWeather.current.condition.icon}}>
+  </div>
+

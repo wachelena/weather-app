@@ -1,0 +1,16 @@
+.weather-header{
+  width: 100%;
+  height:10rem;
+  text-align: center;
+  background-image: url("/assets/images/cloud.jpg");
+  display:flex;
+	align-items: center;
+  justify-content: center;
+  font-size: 5rem;
+}
+
+.current-weather{
+  width: 100%;
+  padding:0px;
+  font-size:1rem;
+}
