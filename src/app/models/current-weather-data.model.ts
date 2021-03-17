@@ -1,3 +1,4 @@
+import { Location } from './location.model';
 import { Current } from './current.model';
 export interface CurrentWeatherData {
 location: Location;

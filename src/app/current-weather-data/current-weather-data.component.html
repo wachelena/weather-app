@@ -3,7 +3,7 @@
     THE WEATHER APP
   </div>
 
-  <div class="current-weather">
+  <div *ngIf="currentWeather" class="current-weather">
     <p> Current data for {{currentWeather.location.name}}: </p>
     <ul>
       <li>Temperature: {{currentWeather.current.temp_c}} °C</li>
@@ -13,3 +13,5 @@
     <img src={{currentWeather.current.condition.icon}}>
   </div>
 
+
+<app-meteogram></app-meteogram>
