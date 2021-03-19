@@ -15,4 +15,9 @@ export class WeatherService {
     { observe: 'response', responseType: 'json' });
   }
 
+  public getWeatherAndAirQuality() {
+    return this.http.get<CurrentWeatherData>('http://api.weatherapi.com/v1/current.json?key=636ccc6465d14389b3981852211903&q=Zagreb&aqi=yes',
+    { observe: 'response', responseType: 'json' });
+  }
+
 }

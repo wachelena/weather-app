@@ -1,3 +1,4 @@
+import { AirQuality } from './air-quality.model';
 import { Condition } from './condition.model';
 
 export interface Current {
@@ -14,6 +15,7 @@ export interface Current {
   vis_km: number;
   uv: number;
   gust_kph: number;
+  air_quality: AirQuality
 }
 
 export class Current  {
@@ -30,6 +32,7 @@ export class Current  {
     public feelslike_c: number,
     public vis_km: number,
     public uv: number,
-    public gust_kph: number
+    public gust_kph: number,
+    public air_quality: AirQuality
   ) {}
 }

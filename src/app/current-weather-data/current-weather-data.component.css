@@ -1,16 +1,99 @@
+
 .weather-header{
   width: 100%;
   height:10rem;
   text-align: center;
-  background-image: url("/assets/images/cloud.jpg");
+  background-image:  url("/assets/images/cloud.jpg");
   display:flex;
 	align-items: center;
   justify-content: center;
   font-size: 5rem;
 }
 
-.current-weather{
+.grid-container { 
+  display: grid;
+  grid-template-columns: 70% 30%;
+  text-align: top;
+  color: white;
+  justify-content: space-around;
+  align-content: space-around;
   width: 100%;
-  padding:0px;
+}
+
+.div1 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  color: white;
+}
+
+.div2{
+  grid-column-start: 2;
+  grid-column-end: 3;
+  text-align: right;
+} 
+
+.row {
+  margin:1rem;
+  display: table;
+  width: 95%; 
+  table-layout: fixed; 
+  border-spacing: 10px; 
+}
+
+.app-title{
+  background: -webkit-linear-gradient(#0f2027, #203a43,#2C5364);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  border-radius: 20px;
+  margin: 10px;
+  padding: 10px;
+
+}
+
+.current-weather{
+  display: table-cell;
+  width: 50%;
+  margin:1rem;
+  padding: 1rem;
   font-size:1rem;
+  background-color: #ec666f;
+  border-radius: 10px;
+}
+
+.weather-text{
+  font-weight: bold;
+  color: white;
+  font-size: 1.6rem;
+}
+
+.air-quality{
+  display: table-cell;
+  width: 50%;
+  margin:1rem;
+  padding: 1rem;
+  font-size:1rem;
+  background-color: #32c8c9;
+  border-radius: 10px;
+}
+
+.air-text {
+  padding-bottom: 0.5rem;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.air-title{
+  font-weight: bold;
+  color: white;
+  font-size: 1.6rem;
+  
+}
+.icon-s{
+  width: 20px;
+  height: 30px
+}
+
+.btn-text{
+  color: white;
+  font-weight: bold;
 }

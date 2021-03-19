@@ -1,0 +1,22 @@
+
+    <div *ngIf="airQualityAndWeather" class="air-quality">
+        <div class="grid-container">
+          <div class="div1">
+            <p class="air-title"> Air Quality {{airQualityAndWeather.location.name}}: </p>
+            <ul class="air-text">
+              <li>CO: {{airQualityAndWeather.current.air_quality.co}}μg/m3</li>
+              <li>PM2.5: {{airQualityAndWeather.current.air_quality.pm2_5}}μg/m3</li>
+              <li>PM10: {{airQualityAndWeather.current.air_quality.pm10}}μg/m3</li>
+              <li>NO2: {{airQualityAndWeather.current.air_quality.no2}}μg/m3</li>
+              <li>SO2: {{airQualityAndWeather.current.air_quality.so2}}μg/m3</li>
+              <li>O3: {{airQualityAndWeather.current.air_quality.o3}}μg/m3</li>
+            </ul>
+          </div>
+          <div class="div2"> 
+          <button class="btn btn-primary"  style="margin-bottom: 10px;" type="btn btn-primary" (click)="openServicesList()">
+            <a class="btn-text" routerLink="/">Home </a>
+          </button>
+          </div>
+      </div>
+      
+      <app-doughnut-chart></app-doughnut-chart>

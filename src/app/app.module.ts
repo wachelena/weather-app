@@ -1,3 +1,4 @@
+import { AirQualityComponent } from './air-quality/air-quality.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -9,6 +10,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { MeteogramComponent } from './charts/meteogram/meteogram.component';
 import windbarb from 'highcharts/modules/windbarb.src';
 import { ChartModule, HIGHCHARTS_MODULES } from 'angular-highcharts';
+import { DoughnutChartComponent } from './charts/doughnut-chart.ts/doughnut-chart.component';
 
 export function highchartsModules() {
   // apply Highcharts Modules to this array
@@ -19,7 +21,9 @@ export function highchartsModules() {
   declarations: [
     AppComponent,
     CurrentWeatherDataComponent,
-    MeteogramComponent
+    AirQualityComponent,
+    MeteogramComponent,
+    DoughnutChartComponent,
   ],
   imports: [
     BrowserModule,

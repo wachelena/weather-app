@@ -3,11 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../services/weather.service';
 
 @Component({
-  selector: 'app-current-weather-data',
-  templateUrl: './current-weather-data.component.html',
-  styleUrls: ['./current-weather-data.component.css']
+  selector: 'app-air-quality',
+  templateUrl: './air-quality.component.html',
+  styleUrls: ['./air-quality.component.css']
 })
-export class CurrentWeatherDataComponent implements OnInit {
+export class AirQualityComponent implements OnInit {
 
   currentWeather: CurrentWeatherData;
   airQualityAndWeather: CurrentWeatherData;
@@ -15,18 +15,9 @@ export class CurrentWeatherDataComponent implements OnInit {
   constructor( private weatherService: WeatherService ) { }
 
   ngOnInit(): void {
-    this.getCurrentWeatherData();
     this.getWeatherAndAirQuality();
   }
-
-  getCurrentWeatherData() {
-    this.weatherService.getCurrentWeatherData().subscribe((response) => {
-      this.currentWeather = response.body,
-        console.log(this.currentWeather)
-    }
-    )
-  }
-
+  
   getWeatherAndAirQuality() {
     this.weatherService.getWeatherAndAirQuality().subscribe((response) => {
       this.airQualityAndWeather = response.body,
