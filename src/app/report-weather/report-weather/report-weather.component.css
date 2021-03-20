@@ -1,0 +1,13 @@
+  .current-weather{
+    display: flex;
+    justify-content: space-around;
+    margin:0.5rem;
+    background-image:linear-gradient(#d1bad0, #b8adb7);
+    border-radius:0.5rem;
+    width:50%;
+    margin-bottom:2rem;
+  }
+
+  .curredt-data{
+    width:90%;
+  }

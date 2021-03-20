@@ -1,18 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import Map from 'ol/Map';
-import View from 'ol/View';
-import Vector from 'ol/layer/Vector';
-import VectorSource from 'ol/source/Vector';
-import Point from 'ol/geom/Point'
-import Feature from 'ol/Feature'
-import Style from 'ol/style/Style';
-import Icon from 'ol/style/Icon';
-import OSM from 'ol/source/OSM';
-import * as olProj from 'ol/proj';
-import TileLayer from 'ol/layer/Tile';
-import VectorLayer from 'ol/layer/Vector';
 import { Overlay } from 'ol';
+import Feature from 'ol/Feature';
+import Point from 'ol/geom/Point';
+import TileLayer from 'ol/layer/Tile';
+import Vector from 'ol/layer/Vector';
+import Map from 'ol/Map';
+import * as olProj from 'ol/proj';
+import OSM from 'ol/source/OSM';
+import VectorSource from 'ol/source/Vector';
+import Icon from 'ol/style/Icon';
+import Style from 'ol/style/Style';
+import View from 'ol/View';
+import { WeatherAlertType, weatherAlertTypes } from '../models/weather-alert-types.model';
 import { WeatherAlert } from '../models/weather-alert.model';
+import { WeatherAlertService } from '../services/weather-alert.service';
 
 @Component({
   selector: 'app-weather-alerts',
@@ -22,12 +23,15 @@ import { WeatherAlert } from '../models/weather-alert.model';
 export class WeatherAlertsComponent implements OnInit {
   map: any;
   overlay: Overlay;
+  
   weatherAlert: WeatherAlert;
+  weatherAlertType: WeatherAlertType;
 
-  constructor() { }
+  weatherAlertTypes = weatherAlertTypes;
+
+  constructor(private weatherAlertService: WeatherAlertService) { }
 
   ngOnInit() {
-    console.log(this.overlay);
 
     this.overlay = new Overlay({
       element: document.getElementById('popup'),
@@ -36,7 +40,6 @@ export class WeatherAlertsComponent implements OnInit {
         duration: 250
       }
     });
-    console.log(this.overlay);
 
     this.map = new Map({
       target: 'weather_map',
@@ -67,6 +70,11 @@ export class WeatherAlertsComponent implements OnInit {
         this.overlay.setPosition(undefined);;
       }
     })
+
+    this.weatherAlertService.getLastWeatherAlertForCity("Zagreb").subscribe((response) => {
+      this.weatherAlert = response.body,
+      this.weatherAlertType = this.weatherAlertTypes.find(x => x.weatherAlertTypeId === this.weatherAlert.weatherAlertTypeId);
+    });
   }
 
   addMarker() {
@@ -86,5 +94,4 @@ export class WeatherAlertsComponent implements OnInit {
     });
     this.map.addLayer(vectorLayer);
   }
-
 }

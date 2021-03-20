@@ -1,10 +1,13 @@
-<div>
-    <div class="row">
-        <p>TODO: Report weather alert - insert data for weather alert and save them on server</p>
+<div class="row">
+    <div id="weather_map"></div>
+</div>
+
+<div id="popup" class="ol-popup">
+    <div *ngIf="weatherAlert">
+        <h4>{{weatherAlertType.weatherAlertTypeName}}</h4>
+        <p>Opis: {{weatherAlert.description}}</p>
+        <br>
+        <p style="color:red">//TODO: dohvatiti sve prijavljene vremenske neprilike</p>
+        <p style="color:red">//TODO: prikazati sve podatke za odabrano upozorenje</p>
     </div>
-    <div class="row">
-        <div id="weather_map"></div>
-    </div>
-    <div id="popup" class="ol-popup">
-    </div>    
 </div>

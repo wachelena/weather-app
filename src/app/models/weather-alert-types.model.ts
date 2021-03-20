@@ -10,8 +10,7 @@ export class WeatherAlertType  {
   ) {}
 }
 
-export class WeatherAlertTypes {
-    weatherAlertTypes : WeatherAlertType[] = [
+export const weatherAlertTypes : WeatherAlertType[] = [
         {weatherAlertTypeId: 1, weatherAlertTypeName: 'Vjetar'},
         {weatherAlertTypeId: 2, weatherAlertTypeName: 'Snijeg/Led'},
         {weatherAlertTypeId: 3, weatherAlertTypeName: 'Grmljavinsko nevrijeme'},
@@ -24,5 +23,4 @@ export class WeatherAlertTypes {
         {weatherAlertTypeId: 10, weatherAlertTypeName: 'Kiša'},
         {weatherAlertTypeId: 11, weatherAlertTypeName: 'Poplava'},
         {weatherAlertTypeId: 12, weatherAlertTypeName: 'Bujična poplava'}
-    ];
-}
+    ]

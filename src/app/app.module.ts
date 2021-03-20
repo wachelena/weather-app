@@ -14,6 +14,7 @@ import { ChartModule, HIGHCHARTS_MODULES } from 'angular-highcharts';
 import { DoughnutChartComponent } from './charts/doughnut-chart.ts/doughnut-chart.component';
 import { WeatherAlertsComponent } from './weather-alerts/weather-alerts.component';
 import { DailyForecastComponent } from './daily-forecast/daily-forecast.component';
+import { ReportWeatherComponent } from './report-weather/report-weather/report-weather.component';
 
 export function highchartsModules() {
   // apply Highcharts Modules to this array
@@ -29,6 +30,7 @@ export function highchartsModules() {
     DoughnutChartComponent,
     WeatherAlertsComponent,
     DailyForecastComponent,
+    ReportWeatherComponent,
   ],
   imports: [
     BrowserModule,

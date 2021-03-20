@@ -4,11 +4,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { AirQualityComponent } from './air-quality/air-quality.component';
 import { WeatherAlertsComponent } from './weather-alerts/weather-alerts.component';
 import { DailyForecastComponent } from './daily-forecast/daily-forecast.component';
+import { ReportWeatherComponent } from './report-weather/report-weather/report-weather.component';
 
 const routes: Routes = [ { path: '', component: CurrentWeatherDataComponent },
                          { path: 'air', component: AirQualityComponent },
                          { path: 'alerts', component: WeatherAlertsComponent },
-                         { path: 'daily-forecast', component: DailyForecastComponent }
+                         { path: 'daily-forecast', component: DailyForecastComponent },
+                         { path: 'report', component: ReportWeatherComponent }
                         ];
 
 
