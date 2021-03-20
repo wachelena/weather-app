@@ -1,42 +1,56 @@
-<div class="back-col">
-  <div class="row">
-    <div *ngIf="currentWeather" class="current-weather">
-      <div class="grid-container">
-        <div class="div1">
-          <p class="weather-text"> Current data for {{currentWeather.location.name}}: </p>
-          <ul>
-            <li>Temperature: {{currentWeather.current.temp_c}} °C</li>
-            <li>Wind speed: {{currentWeather.current.wind_kph}} km/h</li>
-            <li>Condition: {{currentWeather.current.condition.text}}</li>
-          </ul>
-        </div>
-        <div class="div2"> 
-          <img src={{currentWeather.current.condition.icon}}>
-        </div>
-      </div>
+<div class="weather-data-container">
+  <div *ngIf="currentWeather" class="current-weather">
+    <div class="curredt-data" style="margin: 1rem">
+      <div style="font-size: 1.5rem"> Current weather on location {{currentWeather.location.name}} </div>
+      <div>On date: {{currentWeather.current.last_updated}} </div>
+      <div style="font-size: 3rem; font-weight: bold;">{{currentWeather.current.temp_c}} °C</div>
+      <div>Wind: {{currentWeather.current.wind_kph}} km/h {{currentWeather.current.wind_dir}}</div>
+      <div>{{currentWeather.current.condition.text}}</div>
     </div>
+
+    <div class="current-icon" style="margin: 1rem">
+      <img src={{currentWeather.current.condition.icon}}>
+    </div>
+
+  </div>
+
+  <div class="sunrise">
+    <div style="margin: 1rem">Izlasci i zalasci sunca i mjeseca </div>
+    <!-- <div> Real feel: {{currentWeather.current.condition.text}}</div> -->
+  </div>
+
+
 
     <div *ngIf="airQualityAndWeather" class="air-quality">
       <div class="grid-container">
         <div class="div1">
           <p class="air-title"> Air Quality {{airQualityAndWeather.location.name}}: </p>
           <ul class="air-text">
-            <li>CO: {{airQualityAndWeather.current.air_quality.co}}μg/m3</li>
-            <li>PM2.5: {{airQualityAndWeather.current.air_quality.pm2_5}}μg/m3</li>
-            <li>PM10: {{airQualityAndWeather.current.air_quality.pm10}}μg/m3</li>
-            <li>NO2: {{airQualityAndWeather.current.air_quality.no2}}μg/m3</li>
-            <li>SO2: {{airQualityAndWeather.current.air_quality.so2}}μg/m3</li>
-            <li>O3: {{airQualityAndWeather.current.air_quality.o3}}μg/m3</li>
+            <li>CO: {{airQualityAndWeather.current.air_quality.co}} μg/m3</li>
+            <li>PM2.5: {{airQualityAndWeather.current.air_quality.pm2_5}} μg/m3</li>
+            <li>PM10: {{airQualityAndWeather.current.air_quality.pm10}} μg/m3</li>
+            <li>NO2: {{airQualityAndWeather.current.air_quality.no2}} μg/m3</li>
+            <li>SO2: {{airQualityAndWeather.current.air_quality.so2}} μg/m3</li>
+            <li>O3: {{airQualityAndWeather.current.air_quality.o3}} μg/m3</li>
           </ul>
         </div>
-        <div class="div2"> 
-        <button class="btn btn-primary" type="btn btn-primary" (click)="openServicesList()">
-          <a class="btn-text" routerLink="/air">Show Details  <img class="icon-s" src="/assets/images/airqv.svg" border="0" alt="" /></a>
+        <div class="div2">
+        <button style="background-color:#bb8cb8" (click)="openServicesList()">
+          <a class="btn-text" routerLink="/air" >Show Details  <img class="icon-s" src="/assets/images/airqv.svg" border="0" alt="" /></a>
         </button>
         </div>
     </div>
-      
+
     </div>
   </div>
-</div>
+
 <app-meteogram></app-meteogram>
+
+
+
+
+
+
+
+
+

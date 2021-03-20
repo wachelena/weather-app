@@ -1,0 +1,35 @@
+<div class="form-group" style="margin: 2%;">
+    <label for="city-name">Pretraga po gradu: </label>
+    <br>
+    <input type="text" id="city-name" placeholder="Upišite naziv grada" [(ngModel)]="name" #ctrl="ngModel" required>
+    <br>
+    <button type="button" class="btn btn-secondary" (click)="setValue()" style="margin-top: 0.5%;">Pretraga</button>
+</div>
+
+<div class="weather-data" style="margin: 1%">
+    <div class="card" style="width: fit-content; padding: 0%; margin: 1%; padding: 2%;">
+        <div class="current-data" style="text-align: right; margin: 1%;">
+            <h3>{{location.name}}</h3>
+            <p>{{location.date | date: 'dd.MM.yyyy'}}</p>
+            <p>{{location.localTime}}</p>
+        </div>
+        <canvas id="tempChart" width="800" height="200"></canvas>
+    </div>
+    
+    <div class="card-group" fxLayout="row" fxLayoutAlign="none" style="width: 350px; margin: 1%;">
+        <div class="card"  
+        style="width: fit-content; padding: 0%; margin: 1%; border-radius: 10%;" 
+        *ngFor="let day of weatherData"
+        (click)="renderLineChart(day)">
+            <div class="card-body">
+                <h5 class="card-title" style="text-align: center;">{{ day.date | date: 'dd.MM.'}}</h5>
+                <img src='{{ day.weatherIcon }}'/>
+                <br>
+                <span class="min-temp" style="float: left;">{{ day.mintemp }}°</span>
+                <span class="max-temp" style="float: right;">{{ day.maxtemp }}°</span>
+            </div>
+        </div>
+    </div>
+        
+
+</div>
