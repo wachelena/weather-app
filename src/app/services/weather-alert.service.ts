@@ -10,8 +10,7 @@ export class WeatherAlertService {
   constructor(protected http: HttpClient) {}
 
   public getLastWeatherAlertForCity(city: string) {
-   // return this.http.get<WeatherAlert>('https://weather-app-e7fe910c.herokuapp.com/getCity/' + city,
-    return this.http.get<WeatherAlert>('http://localhost:8080/getCity/' + city,
+    return this.http.get<WeatherAlert>('https://weather-app-e7fe910c.herokuapp.com/getCity/' + city,
     { observe: 'response', responseType: 'json' });
   }
 

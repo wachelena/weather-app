@@ -6,24 +6,9 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: 70% 30%;
   text-align: top;
-  color: white;
-  justify-content: space-around;
   align-content: space-around;
   width: 100%;
-}
-
-.div1 {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  color: white;
-}
-
-.div2{
-  grid-column-start: 2;
-  grid-column-end: 3;
-  text-align: right;
 }
 
 .row {
@@ -34,52 +19,33 @@
   border-spacing: 10px;
 }
 
-.current-weather{
-  display: table-cell;
-  width: 50%;
-  margin:1rem;
-  padding: 1rem;
-  font-size:1rem;
-  background-color: #ec666f;
-  border-radius: 10px;
-}
-
 .weather-text{
   font-weight: bold;
-  color: white;
   font-size: 1.6rem;
 }
 
 .air-quality{
-  display: table-cell;
-  width: 50%;
-  margin:1rem;
-  padding: 1rem;
+  display: flex;
+  justify-content: space-around;
+  margin:0.5rem;
   font-size:1rem;
   background-color: lightgrey;
-  border-radius: 10px;
+  border-radius:0.5rem;
+  width:40%
 }
 
 .air-text {
   padding-bottom: 0.5rem;
-  color: white;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 .air-title{
-  font-weight: bold;
-  color: white;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 
 }
 .icon-s{
   width: 20px;
   height: 30px
-}
-
-.btn-text{
-  color: white;
-  font-weight: bold;
 }
 
 .current-weather{
@@ -89,7 +55,7 @@
   font-size:1rem;
   background-image:linear-gradient(#bb8cb8, #dec5dc);
   border-radius:0.5rem;
-  width:50%
+  width:70%
 }
 
 .sunrise{

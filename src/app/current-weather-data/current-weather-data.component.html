@@ -15,7 +15,7 @@
   </div>
 
   <div class="sunrise">
-    <div style="margin: 1rem">Izlasci i zalasci sunca i mjeseca </div>
+    <div style="font-size: 1.5rem; margin: 1rem">Sunrise & sunset </div>
     <!-- <div> Real feel: {{currentWeather.current.condition.text}}</div> -->
   </div>
 
@@ -23,7 +23,7 @@
 
     <div *ngIf="airQualityAndWeather" class="air-quality">
       <div class="grid-container">
-        <div class="div1">
+        <div style="margin: 1rem">
           <p class="air-title"> Air Quality {{airQualityAndWeather.location.name}}: </p>
           <ul class="air-text">
             <li>CO: {{airQualityAndWeather.current.air_quality.co}} μg/m3</li>
@@ -33,11 +33,9 @@
             <li>SO2: {{airQualityAndWeather.current.air_quality.so2}} μg/m3</li>
             <li>O3: {{airQualityAndWeather.current.air_quality.o3}} μg/m3</li>
           </ul>
-        </div>
-        <div class="div2">
-        <button style="background-color:#bb8cb8" (click)="openServicesList()">
-          <a class="btn-text" routerLink="/air" >Show Details  <img class="icon-s" src="/assets/images/airqv.svg" border="0" alt="" /></a>
-        </button>
+          <button type="button" class="btn btn-outline-info" (click)="openServicesList()">
+            <a class="btn-text" routerLink="/air">  Show Details  <img class="icon-s" src="/assets/images/airqv.svg" alt="" /></a>
+          </button>
         </div>
     </div>
 
