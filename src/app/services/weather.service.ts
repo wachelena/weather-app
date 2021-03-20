@@ -12,6 +12,7 @@ export class WeatherService {
   constructor(protected http: HttpClient) {}
 
   public getCurrentWeatherData() {
+    // stavite svoj APIKEY
     return this.http.get<CurrentWeatherData>('http://api.weatherapi.com/v1/current.json?key=0ea33c2862ae419f854202839211503&q=Zagreb',
     { observe: 'response', responseType: 'json' });
   }

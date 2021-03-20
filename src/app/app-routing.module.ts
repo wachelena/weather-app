@@ -9,6 +9,7 @@ const routes: Routes = [ { path: '', component: CurrentWeatherDataComponent },
                          { path: 'daily-forecast', component: DailyForecastComponent }
                         ];
 
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
