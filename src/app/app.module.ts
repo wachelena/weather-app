@@ -11,6 +11,7 @@ import { MeteogramComponent } from './charts/meteogram/meteogram.component';
 import windbarb from 'highcharts/modules/windbarb.src';
 import { ChartModule, HIGHCHARTS_MODULES } from 'angular-highcharts';
 import { DoughnutChartComponent } from './charts/doughnut-chart.ts/doughnut-chart.component';
+import { WeatherAlertsComponent } from './weather-alerts/weather-alerts.component';
 
 export function highchartsModules() {
   // apply Highcharts Modules to this array
@@ -24,6 +25,7 @@ export function highchartsModules() {
     AirQualityComponent,
     MeteogramComponent,
     DoughnutChartComponent,
+    WeatherAlertsComponent,
   ],
   imports: [
     BrowserModule,

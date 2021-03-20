@@ -1,0 +1,24 @@
+.back-col{
+    margin: 2rem;
+  }
+  
+  .weather-header{
+    width: 100%;
+    height:10rem;
+    text-align: center;
+    background-image:  url("/assets/images/cloud.jpg");
+    display:flex;
+      align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+  }
+  
+  .app-title{
+    background: -webkit-linear-gradient(#0f2027, #203a43,#2C5364);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border-radius: 20px;
+    margin: 10px;
+    padding: 10px;
+  }
+  

@@ -2,9 +2,11 @@ import { CurrentWeatherDataComponent } from './current-weather-data/current-weat
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AirQualityComponent } from './air-quality/air-quality.component';
+import { WeatherAlertsComponent } from './weather-alerts/weather-alerts.component';
 
 const routes: Routes = [ { path: '', component: CurrentWeatherDataComponent },
                          { path: 'air', component: AirQualityComponent },
+                         { path: 'alerts', component: WeatherAlertsComponent },
                         ];
 
 @NgModule({
