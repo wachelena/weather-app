@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CurrentWeatherDataComponent } from './current-weather-data/current-weather-data.component';
 import { HighchartsChartModule } from 'highcharts-angular';
-import { MeteogramComponent } from './charts/meteogram/meteogram.component';
+
 import windbarb from 'highcharts/modules/windbarb.src';
 import { ChartModule, HIGHCHARTS_MODULES } from 'angular-highcharts';
 import { DoughnutChartComponent } from './charts/doughnut-chart.ts/doughnut-chart.component';
@@ -26,7 +26,6 @@ export function highchartsModules() {
     AppComponent,
     CurrentWeatherDataComponent,
     AirQualityComponent,
-    MeteogramComponent,
     DoughnutChartComponent,
     WeatherAlertsComponent,
     DailyForecastComponent,
