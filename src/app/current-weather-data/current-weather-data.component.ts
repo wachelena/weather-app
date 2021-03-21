@@ -1,6 +1,7 @@
 import { CurrentWeatherData } from './../models/current-weather-data.model';
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../services/weather.service';
+import { Accessory } from '../models/accessory.model';
 
 @Component({
   selector: 'app-current-weather-data',
@@ -11,6 +12,7 @@ export class CurrentWeatherDataComponent implements OnInit {
 
   currentWeather: CurrentWeatherData;
   airQualityAndWeather: CurrentWeatherData;
+  accessories: Accessory[] = [];
 
   constructor( private weatherService: WeatherService ) { }
 
