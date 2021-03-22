@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { WeatherService } from '../services/weather.service';
-import { City } from '../_interface/city.model';
-import { DailyData } from '../_interface/daily-data.model';
-import { DailyTemp } from '../_interface/daily-temp.model';
+import { City } from '../models/city.model';
+import { DailyData } from '../models/daily-data.model';
+import { DailyTemp } from '../models/daily-temp.model';
 import * as Chart from 'chart.js';
 
 @Component({
@@ -51,7 +51,7 @@ export class DailyForecastComponent implements OnInit {
     dailyData.maxtemp = day.day.maxtemp_c;
     dailyData.mintemp = day.day.mintemp_c;
     dailyData.weatherIcon = day.day.condition.icon;
-    
+
     day.hour.filter((_, x) => x % 3 == 0)
       .forEach(hour => {
         let dailyTemp: DailyTemp = new DailyTemp();
