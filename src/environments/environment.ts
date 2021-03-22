@@ -7,7 +7,7 @@ export const environment = {
 
   // OVDJE STAVITE SVOJ API KEY
 
-  apiKey: '0ad12298943e4ec0b52143743211603'
+  apiKey: 'api key'
 };
 
 /*
