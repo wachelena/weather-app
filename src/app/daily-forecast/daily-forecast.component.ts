@@ -11,7 +11,7 @@ import * as Chart from 'chart.js';
   styleUrls: ['./daily-forecast.component.css']
 })
 export class DailyForecastComponent implements OnInit {
-  name: string = 'Sisak';
+  name: string = '';
   location: City;
   weatherData: DailyData[] = [];
 
@@ -28,47 +28,19 @@ export class DailyForecastComponent implements OnInit {
   setValue() {
     this.weatherService.getDailyWeatherByCityName(this.name).subscribe(
       (res: any) => {
-        console.log(res)
-        this.weatherData = [];
-        this.location.name = res.location.name;
-        this.location.date = res.location.localtime.split(" ")[0];
-        this.location.localTime = res.location.localtime.split(" ")[1];
+        
+        // TODO pripremiti podatke pomoću city, daily-data i daily-temp.model.ts u src/app/models
 
-        res.forecast.forecastday.forEach(day => {
-          this.weatherData.push(this.createDailyDataObject(day));
-        });
-
-        this.renderLineChart(this.weatherData[0]);
+        // Pozvati renderLineChart() funkciju za današnji dan
       }
     )
   }
 
-  createDailyDataObject(day: any) {
-    let dailyData: DailyData = new DailyData();
-    let hourlyData: DailyTemp[] = [];
-
-    dailyData.date = day.date;
-    dailyData.maxtemp = day.day.maxtemp_c;
-    dailyData.mintemp = day.day.mintemp_c;
-    dailyData.weatherIcon = day.day.condition.icon;
-
-    day.hour.filter((_, x) => x % 3 == 0)
-      .forEach(hour => {
-        let dailyTemp: DailyTemp = new DailyTemp();
-        dailyTemp.time = hour.time.split(" ")[1];
-        dailyTemp.temp_c = hour.temp_c;
-
-        hourlyData.push(dailyTemp);
-      });
-
-    dailyData.hourlyData = hourlyData;
-
-    return dailyData;
-  }
-
   renderLineChart(data: DailyData) {
-    let hourData: string[] = data.hourlyData.map(x => x.time);
-    let tempData: number[] = data.hourlyData.map(x => x.temp_c);
+
+    // Pomoćne varijable za spremanje podataka o satu i temperaturi
+    let hourData: string[] = [];
+    let tempData: number[] = [];
 
     if (this.dailyTempChart) {
       this.dailyTempChart.destroy();
