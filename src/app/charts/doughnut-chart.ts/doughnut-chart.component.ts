@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 
 @Component({
@@ -6,7 +6,7 @@ import * as Highcharts from 'highcharts';
   templateUrl: './doughnut-chart.component.html',
   styleUrls: ['./doughnut-chart.component.css'],
 })
-export class DoughnutChartComponent {
+export class DoughnutChartComponent implements OnInit {
     highcharts = Highcharts;
     chartOptions = {
        chart : {
@@ -40,4 +40,8 @@ export class DoughnutChartComponent {
           ]
        }]
     };
+
+    ngOnInit(): void {
+      //chartOptions.series.data = ...
+    }
  }
