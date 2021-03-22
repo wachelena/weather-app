@@ -1,4 +1,3 @@
-import { AirQualityComponent } from './air-quality/air-quality.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -25,7 +24,6 @@ export function highchartsModules() {
   declarations: [
     AppComponent,
     CurrentWeatherDataComponent,
-    AirQualityComponent,
     DoughnutChartComponent,
     WeatherAlertsComponent,
     DailyForecastComponent,
