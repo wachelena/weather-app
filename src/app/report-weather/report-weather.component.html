@@ -1,6 +1,6 @@
 <div class="current-weather">
     <div class="curredt-data" style="margin: 1rem">
-        <div class="mb-3" style="font-size: 1.5rem">Report weather alert:</div>
+        <div class="mb-3" style="font-size: 1.5rem">Report severe weather:</div>
         <div class="input-group input-group-sm mb-3">
             <select class="form-control form-control-sm" (ngModel)="selectedWeatherAlertType"> >
                 <option *ngFor="let opt of weatherAlertTypes" [value]="opt.weatherAlertTypeId">
@@ -14,7 +14,7 @@
             <input type="text" class="form-control" aria-label="Small" aria-describedby="inputGroup-sizing-sm"
                 [(ngModel)]="selectedWeatherAlert.city">
         </div>
-        <p style="color:red">TODO: dodati ostala polja za prijavu vremenske neprilike te spremiti podatke na server
+        <p style="color:red">TODO: dodati ostala polja za prijavu ekstremnih vremenskih prilika te spremiti podatke na server
         </p>
         <button type="button" class="btn btn-outline-danger" (click)="submit()">Report</button>
     </div>
