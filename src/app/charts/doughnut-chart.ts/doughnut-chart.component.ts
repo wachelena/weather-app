@@ -4,17 +4,17 @@ import * as Highcharts from 'highcharts';
 @Component({
   selector: 'app-doughnut-chart',
   templateUrl: './doughnut-chart.component.html',
-  styleUrls: ['./doughnut-chart.component.scss'],
+  styleUrls: ['./doughnut-chart.component.css'],
 })
 export class DoughnutChartComponent {
     highcharts = Highcharts;
-    chartOptions = {   
+    chartOptions = {
        chart : {
           plotBorderWidth: null,
           plotShadow: false
        },
        title : {
-          text: 'Current Air Quality Zagreb'   
+          text: 'Current Air Quality Zagreb'
        },
        tooltip : {
           pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -24,7 +24,7 @@ export class DoughnutChartComponent {
              shadow: false,
              center: ['50%', '50%'],
              size:'60%',
-             innerSize: '40%'            
+             innerSize: '40%'
           }
        },
        series : [{
